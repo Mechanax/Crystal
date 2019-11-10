@@ -1,0 +1,19 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/Vazkii/Quark"
+
+[[mods]]
+modId="crystal"
+displayName="Crystal"
+version="${version}"
+authors="Mechana"
+description='''
+The begining of something big
+'''
+
+[[dependencies.crystal]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28.1.61,)"
+    ordering="NONE"
+    side="BOTH"
