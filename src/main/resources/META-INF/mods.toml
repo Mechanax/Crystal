@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[28,)"
-issueTrackerURL="https://github.com/Vazkii/Quark"
+issueTrackerURL="https://github.com/Mechanax/Crystal/issues"
 
 [[mods]]
 modId="crystal"
@@ -8,12 +8,18 @@ displayName="Crystal"
 version="${version}"
 authors="Mechana"
 description='''
-The begining of something big
+The start of something big
 '''
 
 [[dependencies.crystal]]
     modId="forge"
     mandatory=true
-    versionRange="[28.1.61,)"
+    versionRange="[28.1.87,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.crystal]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
