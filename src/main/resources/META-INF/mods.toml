@@ -14,7 +14,7 @@ The start of something big
 [[dependencies.crystal]]
     modId="forge"
     mandatory=true
-    versionRange="[28.1.87,)"
+    versionRange="[28.1.61,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.crystal]]
