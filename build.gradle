@@ -49,7 +49,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                crystal {
+                pseudosorcery {
                     source sourceSets.main
                 }
             }
@@ -65,7 +65,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                crystal {
+                pseudosorcery {
                     source sourceSets.main
                 }
             }
