@@ -1,3 +1,6 @@
 {
-  "block.crystal.firstblock": "First Block"
+  "block.crystal.firstblock": "First Block",
+
+  "_comment": "Creative Tabs",
+  "itemGroup.crystal": "Crystal"
 }

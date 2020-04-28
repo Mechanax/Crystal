@@ -3,6 +3,7 @@ package mechana.crystal;
 import mechana.crystal.client.core.proxy.ClientProxy;
 import mechana.crystal.common.block.FirstBlock;
 import mechana.crystal.common.block.ModBlocks;
+import mechana.crystal.common.core.ModSetup;
 import mechana.crystal.common.core.proxy.IProxy;
 import mechana.crystal.common.core.proxy.ServerProxy;
 import mechana.crystal.common.lib.LibMisc;
@@ -24,18 +25,18 @@ public class Crystal {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
-    public static Crystal instance;
+    public static ModSetup setup = new ModSetup();
 
     public static final Logger LOG = LogManager.getLogger(LibMisc.MOD_ID);
 
     public Crystal() {
-        instance = this;
-
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        setup.init();
+        proxy.init();
         LOG.info("Setup method registered.");
     }
 
@@ -52,7 +53,9 @@ public class Crystal {
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, new Item.Properties()).setRegistryName("firstblock"));
+            Item.Properties properties = new Item.Properties()
+                    .group(setup.itemGroup);
+            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
         }
     }
 }
