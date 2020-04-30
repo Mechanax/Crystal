@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_top",
+    "textures": {
+        "top": "pseudosorcery:block/raked_sand",
+        "side": "minecraft:block/sand"
+    }
+}

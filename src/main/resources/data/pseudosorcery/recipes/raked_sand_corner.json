@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pseudosorcery:raked_sand"
+    }
+  ],
+  "result": {
+    "item": "pseudosorcery:raked_sand_corner",
+    "count": 1
+  }
+}

@@ -1,6 +1,8 @@
 {
-  "block.pseudosorcery.firstblock": "First Block",
+  "item.pseudosorcery.sand_rake": "Sand Rake",
+  "block.pseudosorcery.raked_sand": "Raked Sand",
+  "block.pseudosorcery.raked_sand_corner": "Raked Sand Corner",
 
   "_comment": "Creative Tabs",
-  "itemGroup.crystal": "PseudoSorcery"
+  "itemGroup.pseudosorcery": "PseudoSorcery"
 }

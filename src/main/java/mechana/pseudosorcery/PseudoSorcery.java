@@ -1,11 +1,14 @@
 package mechana.pseudosorcery;
 
 import mechana.pseudosorcery.client.core.proxy.ClientProxy;
-import mechana.pseudosorcery.common.block.FirstBlock;
+import mechana.pseudosorcery.common.block.BlockRakedSand;
+import mechana.pseudosorcery.common.block.BlockRakedSandCorner;
 import mechana.pseudosorcery.common.block.ModBlocks;
 import mechana.pseudosorcery.common.core.ModSetup;
 import mechana.pseudosorcery.common.core.proxy.IProxy;
 import mechana.pseudosorcery.common.core.proxy.ServerProxy;
+import mechana.pseudosorcery.common.items.ModItems;
+import mechana.pseudosorcery.common.items.SandRakeItem;
 import mechana.pseudosorcery.common.lib.LibMisc;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -23,7 +26,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(LibMisc.MOD_ID)
 public class PseudoSorcery {
 
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+    public static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
     public static ModSetup setup = new ModSetup();
 
@@ -52,14 +55,17 @@ public class PseudoSorcery {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new FirstBlock());
+            event.getRegistry().register(new BlockRakedSand());
+            //event.getRegistry().register(new BlockRakedSandCorner());
         }
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             Item.Properties properties = new Item.Properties()
                     .group(setup.itemGroup);
-            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.RAKEDSAND, properties).setRegistryName("raked_sand"));
+            //event.getRegistry().register(new BlockItem(ModBlocks.RAKEDSANDCORNER, properties).setRegistryName("raked_sand_corner"));
+            event.getRegistry().register(new SandRakeItem());
         }
     }
 }
